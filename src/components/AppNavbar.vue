@@ -1,7 +1,7 @@
 <template>
   <header>
     <container>
-      <router-link to="/">discord.js</router-link>
+      <router-link to="/">discord-akairo</router-link>
 
       <nav>
         <router-link to="/docs">Documentation</router-link><!--

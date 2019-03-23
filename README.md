@@ -1,6 +1,7 @@
-# discord.js-site
+# website
 
-> The website housing documentation for discord.js
+> The website housing documentation for discord-akairo
+> Rebranded fork of discordjs/website
 
 ## Build Setup
 

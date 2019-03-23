@@ -1,4 +1,4 @@
-const GITHUB_ORG = 'https://raw.githubusercontent.com/discordjs/';
+const GITHUB_ORG = 'https://raw.githubusercontent.com/discord-akairo/';
 
 self.addEventListener('fetch', event => {
   const req = event.request;

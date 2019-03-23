@@ -1,7 +1,7 @@
 {
-    "name": "Discord.js Documentation",
-    "short_name": "Discord.js Docs",
-    "theme_color": "#00b2e8",
+    "name": "Discord AKairo Documentation",
+    "short_name": "Akairo Docs",
+    "theme_color": "#87202f",
     "background_color": "#2f3236",
     "display": "browser",
     "Scope": "/",
