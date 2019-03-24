@@ -9,7 +9,22 @@
       <div class="info-item">
         <h2>About</h2>
         <p>
-          About discord-akairo here.
+          <strong>discord-akairo</strong> is a powerful and flexible bot framework for <a href="https://discord.js.org/">discord.js</a>.
+          It allows bot creators absolute freedom in their creativity while taking care of the boilerplate and dirty work.
+        </p>
+      </div>
+
+      <div class="info-item">
+        <h2>Features</h2>
+        <p>
+          <ul>
+            <li>Modular and reloadable commands, inhibitors, and listeners.</li>
+            <li>Flexible command handling and creation.</li>
+            <li>Powerful and thorough command arguments parsing.</li>
+            <li>Message monitoring and blocking with inhibitors.</li>
+            <li>Informative events during command handling.</li>
+            <li>And many other useful utilities.</li>
+          </ul>
         </p>
       </div>
 
