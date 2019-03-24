@@ -1,7 +1,7 @@
 # website
 
-> The website housing documentation for discord-akairo
-> Rebranded fork of discordjs/website
+> The website housing documentation for discord-akairo  
+> Rebranded fork of discordjs/website  
 
 ## Build Setup
 
