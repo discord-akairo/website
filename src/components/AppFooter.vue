@@ -2,7 +2,8 @@
   <footer>
     <container>
       <strong><router-link to="/">discord-akairo</router-link></strong>
-      <p>Footer information</p>
+      <p>A powerful and flexible bot framework for discord.js</p>
+      <p>Website originally created by the <a href="https://github.com/discordjs/website">discord.js</a> team</p>
       <stats />
       <a href="" id="dark-mode-link" @click="toggleDarkMode">
         <em class="fa" :class="darkMode ? 'fa-sun-o' : 'fa-moon-o'"></em>
