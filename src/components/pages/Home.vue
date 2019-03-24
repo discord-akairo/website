@@ -67,7 +67,7 @@
   		margin: 0;
       font-weight: 600;
       letter-spacing: -1px;
-      text-align: left;
+      text-align: center;
   	}
 
   	p {
@@ -90,7 +90,7 @@
 
     #jumbotron {
       flex: 0 0 100%;
-      padding: 80px 16px;
+      padding: 1px 16px 40px;
       background-color: $color-primary;
       background-image: linear-gradient(top, $color-primary, darken($color-primary, 5%));
 
@@ -116,7 +116,7 @@
     #info {
       display: flex;
       flex-flow: row wrap;
-      margin: 64px auto 0 auto;
+      margin: 20px auto 0 auto;
       max-width: 1120px;
 
       @include mq($until: tablet) {

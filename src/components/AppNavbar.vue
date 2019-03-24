@@ -1,11 +1,11 @@
 <template>
   <header>
     <container>
-      <router-link to="/">discord-akairo</router-link>
+      <router-link to="/"><logoSquare id="logo"/></router-link>
 
       <nav>
-        <router-link :to="{ name: 'docs-class', params: { source, tag, ...docs } }">Documentation</router-link>
-        <router-link :to="{ name: 'docs-file', params: { source, tag, ...tutorials } }">Tutorials</router-link>
+        <router-link :to="{ name: 'docs-class', params: { source, tag, ...docs } }">Reference</router-link>
+        <router-link :to="{ name: 'docs-file', params: { source, tag, ...tutorials } }">Guide</router-link>
         <a :href="`https://github.com/${repository}`">GitHub</a>
       </nav>
     </container>
@@ -13,11 +13,15 @@
 </template>
 
 <script>
+  import LogoSquare from './LogoSquare.vue';
   import MainSource from '../data/MainSource.js';
   
   export default {
     name: 'navbar',
     props: ['repository'],
+    components: {
+      LogoSquare,
+    },
     data() {
       return {
         docs: {
@@ -57,7 +61,7 @@
 
     & .container > a {
       background: $color-primary;
-      font-size: 1.1rem;
+      font-size: 1rem;
 
       &:hover {
         color: white;
@@ -72,6 +76,15 @@
         color: white;
         background: darken($color-navbar-bg, 10%);
       }
+    }
+
+    #logo {
+      margin: 0;
+      display: block;
+      width: 100%;
+      max-width: 2rem;
+      max-height: 3rem;
+      overflow: visible;
     }
   }
 </style>
