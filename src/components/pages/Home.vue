@@ -11,9 +11,6 @@
         <p>
           About discord-akairo here.
         </p>
-        <p>
-          More blurb.
-        </p>
       </div>
 
       <div class="full-info-item">
@@ -55,6 +52,7 @@
   		margin: 0;
       font-weight: 600;
       letter-spacing: -1px;
+      text-align: left;
   	}
 
   	p {
@@ -97,7 +95,7 @@
       width: 100%;
       max-width: 700px;
       overflow: visible;
-      filter: drop-shadow(0 3px 4px #333);
+      filter: drop-shadow(0 3px 4px rgb(0, 0, 0));
     }
 
     #info {
