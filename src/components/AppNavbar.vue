@@ -4,8 +4,9 @@
       <router-link to="/">discord-akairo</router-link>
 
       <nav>
-        <router-link to="/docs">Documentation</router-link><!--
-        --><a :href="`https://github.com/${repository}`">GitHub</a>
+        <router-link :to="{ name: 'docs' }">Documentation</router-link>
+        <router-link :to="{ name: 'docs-file' }">Tutorials</router-link>
+        <a :href="`https://github.com/${repository}`">GitHub</a>
       </nav>
     </container>
   </header>
