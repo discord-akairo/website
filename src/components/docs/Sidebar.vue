@@ -10,40 +10,44 @@
       <em id="docs-visibility" class="fa toggle" :class="showPrivate ? 'fa-eye' : 'fa-eye-slash'" :title="togglePrivateLabel" @click="togglePrivate"></em>
       <em id="docs-brightness" class="fa toggle" :class="darkMode ? 'fa-moon-o' : 'fa-sun-o'" :title="toggleDarkModeLabel" @click="toggleDarkMode"></em>
 
-      <ul>
-        <li v-for="(category, categoryID) in docs.custom" :key="categoryID">
-          {{ category.name }}
-          <ul>
-            <li v-for="(file, fileID) in category.files" :key="fileID">
-              <router-link :to="{ name: 'docs-file', params: { category: categoryID, file: fileID } }">
-                {{ file.name }}
-              </router-link>
-            </li>
-          </ul>
-        </li>
+      <transition name="fade-slide" mode="out-in">
+        <ul v-if="showTutorialsSidebar">
+          <li v-for="(category, categoryID) in docs.custom" :key="categoryID">
+            {{ category.name }}
+            <ul>
+              <li v-for="(file, fileID) in category.files" :key="fileID">
+                <router-link :to="{ name: 'docs-file', params: { category: categoryID, file: fileID } }">
+                  {{ file.name }}
+                </router-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-        <li>
-          Classes
-          <transition-group name="animated-list" tag="ul">
-            <li v-for="clarse in docs.classes" v-if="showPrivate || clarse.access !== 'private'" :key="clarse.name" class="animated-list-item">
-              <router-link exact :to="{ name: 'docs-class', params: { class: clarse.name } }">
-                {{ clarse.name }}
-              </router-link>
-            </li>
-          </transition-group>
-        </li>
+        <ul v-else key="docs-sidebar">
+          <li>
+            Classes
+            <transition-group name="animated-list" tag="ul">
+              <li v-for="clarse in docs.classes" v-if="showPrivate || clarse.access !== 'private'" :key="clarse.name" class="animated-list-item">
+                <router-link exact :to="{ name: 'docs-class', params: { class: clarse.name } }">
+                  {{ clarse.name }}
+                </router-link>
+              </li>
+            </transition-group>
+          </li>
 
-        <li>
-          Typedefs
-          <ul>
-            <li v-for="typedef in docs.typedefs" v-if="showPrivate || typedef.access !== 'private'" :key="typedef.name">
-              <router-link exact :to="{ name: 'docs-typedef', params: { typedef: typedef.name } }">
-                {{ typedef.name }}
-              </router-link>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          <li>
+            Typedefs
+            <ul>
+              <li v-for="typedef in docs.typedefs" v-if="showPrivate || typedef.access !== 'private'" :key="typedef.name">
+                <router-link exact :to="{ name: 'docs-typedef', params: { typedef: typedef.name } }">
+                  {{ typedef.name }}
+                </router-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
@@ -61,6 +65,11 @@
     },
 
     computed: {
+      showTutorialsSidebar() {
+        // eslint-disable-next-line eqeqeq
+        return this.$route.params.category != null;
+      },
+
       togglePrivateLabel() {
         return `Private items are ${this.showPrivate ? 'shown' : 'hidden'}. Click to toggle.`;
       },
@@ -156,6 +165,7 @@
     }
 
     ul {
+      min-width: 200px;
       margin: 0 0 16px 0;
       padding: 0;
       list-style: none;

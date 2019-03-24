@@ -41,11 +41,10 @@
         if (route.params.source && this.sources[route.params.source]) {
           this.setSource(route.params.source);
         } else {
-          this.$router.replace({ name: 'docs-file', params: {
+          this.$router.replace({ name: 'docs-class', params: {
             source: MainSource.id,
             tag: MainSource.defaultTag,
-            category: MainSource.defaultFile.category,
-            file: MainSource.defaultFile.id,
+            class: MainSource.defaultClass,
           } });
           return;
         }
