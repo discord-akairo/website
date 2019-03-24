@@ -4,8 +4,8 @@
       <router-link to="/">discord-akairo</router-link>
 
       <nav>
-        <router-link :to="{ name: 'docs' }">Documentation</router-link>
-        <router-link :to="{ name: 'docs-file' }">Tutorials</router-link>
+        <router-link :to="{ name: 'docs-class', params: { source, tag, ...docs } }">Documentation</router-link>
+        <router-link :to="{ name: 'docs-file', params: { source, tag, ...tutorials } }">Tutorials</router-link>
         <a :href="`https://github.com/${repository}`">GitHub</a>
       </nav>
     </container>
@@ -13,9 +13,30 @@
 </template>
 
 <script>
+  import MainSource from '../data/MainSource.js';
+  
   export default {
     name: 'navbar',
     props: ['repository'],
+    data() {
+      return {
+        docs: {
+          class: MainSource.defaultClass,
+        },
+        tutorials: {
+          category: MainSource.defaultFile.category,
+          file: MainSource.defaultFile.id,
+        },
+      };
+    },
+    computed: {
+      tag() {
+        return this.$route.params.tag || MainSource.defaultTag;
+      },
+      source() {
+        return this.$route.params.source || MainSource.id;
+      },
+    },
   };
 </script>
 
