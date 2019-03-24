@@ -1,7 +1,7 @@
 import semver from 'semver';
 import DocsSource from './DocsSource';
 
-const branchBlacklist = new Set(['docs', 'gh-pages']);
+const branchBlacklist = new Set(['docs', 'gh-pages', '7.x']);
 export default new DocsSource({
   id: 'main',
   name: 'Main library',
