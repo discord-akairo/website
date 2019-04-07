@@ -7,7 +7,8 @@
         <em class="fa fa-arrow-left" aria-hidden="true"></em>
       </div>
 
-      <em id="docs-visibility" class="fa toggle" :class="showPrivate ? 'fa-eye' : 'fa-eye-slash'" :title="togglePrivateLabel" @click="togglePrivate"></em>
+      <template v-if="showTutorialsSidebar"></template>
+      <em id="docs-visibility" class="fa toggle" :class="showPrivate ? 'fa-eye' : 'fa-eye-slash'" :title="togglePrivateLabel" @click="togglePrivate" v-else></em>
       <em id="docs-brightness" class="fa toggle" :class="darkMode ? 'fa-moon-o' : 'fa-sun-o'" :title="toggleDarkModeLabel" @click="toggleDarkMode"></em>
 
       <transition name="fade-slide" mode="out-in">
