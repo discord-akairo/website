@@ -4,6 +4,7 @@
 
     <h1>{{ typedef.name }}</h1>
     <span v-if="typedef.deprecated" class="badge warn" title="This typedef is deprecated, and may be removed in a future version.">Deprecated</span>
+    <span v-if="typedef.access === 'private'" class="badge class-badge warn" title="This typedef is private, and may change or be removed at any time.">Private</span>
     <p v-if="typedef.description" v-html="description" class="typedef-desc"></p>
     <see v-if="typedef.see" :see="typedef.see" :docs="docs" />
 

@@ -38,13 +38,13 @@
 
           <li>
             Typedefs
-            <ul>
-              <li v-for="typedef in docs.typedefs" v-if="showPrivate || typedef.access !== 'private'" :key="typedef.name">
+            <transition-group name="animated-list" tag="ul">
+              <li v-for="typedef in docs.typedefs" v-if="showPrivate || typedef.access !== 'private'" :key="typedef.name" class="animated-list-item">
                 <router-link exact :to="{ name: 'docs-typedef', params: { typedef: typedef.name } }">
                   {{ typedef.name }}
                 </router-link>
               </li>
-            </ul>
+            </transition-group>
           </li>
         </ul>
       </transition>
