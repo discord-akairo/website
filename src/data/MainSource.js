@@ -10,5 +10,5 @@ export default new DocsSource({
   defaultTag: 'master',
   defaultClass: 'AkairoClient',
   branchFilter: branch => !branchBlacklist.has(branch) && !branch.startsWith('dependabot/'),
-  tagFilter: tag => semver.gt(tag, '8.0.0'),
+  tagFilter: tag => semver.gte(tag, '8.0.0'),
 });
